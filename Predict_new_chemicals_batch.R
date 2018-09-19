@@ -1,4 +1,5 @@
 # load libraries
+# .libPaths("C:/Users/wchiu/Documents/R/win-library/3.3") # For testing
 library("randomForest")
 library("rcdk") # Note this requres JAVA that is that same build (e.g., 64-bit) as R
 
@@ -13,9 +14,9 @@ dnames<-unique(dnames)
 tvdat <- read.csv("CTV_data_2016-xls.csv",as.is=TRUE)
 
 ## Get file with SMILES and MW
-dat <- read.csv(“EXAMPLE_CAS_SMILES_MW.csv",as.is=TRUE)
+dat <- read.csv("EXAMPLE_CAS_SMILES_MW.csv",as.is=TRUE)
 
-infile<-"EXAMPLE”
+infile<-"EXAMPLE"
 ## Get descriptors from smiles - do this for each chemical
 y.pred.df<-data.frame()
 for (j in 1:100) {
@@ -207,4 +208,4 @@ for (j in 1:100) {
     y.pred.df <- rbind(y.pred.df,y.pred)  
   }
 }
-write.csv(y.pred.df,file=paste(infile,"ToxValuePredictions_1-200.csv",sep="_"),row.names = FALSE)
+write.csv(y.pred.df,file=paste(infile,"ToxValuePredictions_1-100.csv",sep="_"),row.names = FALSE)
