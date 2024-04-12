@@ -1,5 +1,5 @@
 # load libraries
-# Note - needed to install rcdklibs_2.0 and rcdk_3.4.3 to be consistent with server
+# Note - need to install rcdklibs_2.0 and rcdk_3.4.3 to be consistent with server
 library("randomForest")
 library("rcdk") # Note this requres JAVA that is that same build (e.g., 64-bit) as R
 source("get_ad.R")
